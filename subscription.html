@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Jerky subscription boxes — tiers, benefits, and member perks." />
+    <title>Subscription Boxes | Smokehouse Artisan Jerky</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/main.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = { corePlugins: { preflight: false }, darkMode: "class" };
+    </script>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%23c45c26%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 class=%22lucide lucide-flame%22><path d=%22M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z%22/></svg>">
+  </head>
+  <body class="page-site page-transition" data-nav="subscription" data-bs-theme="dark">
+    <div id="page-loader" aria-busy="true"><div class="text-center"><div class="brand-mark mb-1">Smokehouse</div><div class="small text-uppercase mb-4" style="letter-spacing:0.22em;opacity:0.75">Artisan Jerky</div><div class="loader-bar mx-auto"></div></div></div>
+    <canvas id="particle-canvas" aria-hidden="true"></canvas>
+    <div class="cursor-dot" aria-hidden="true"></div>
+    <div class="cursor-ring" aria-hidden="true"></div>
+    <header id="layout-header" role="banner">
+      <nav class="navbar navbar-expand-lg site-navbar py-3">
+        <div class="container container-4k">
+          <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+            <i data-lucide="flame" class="text-burnt" style="width: 1.5rem; height: 1.5rem;"></i>
+            <div>
+              <span class="brand-mark d-block text-uppercase">Smokehouse</span>
+              <span class="d-block small text-uppercase" style="letter-spacing:0.22em;font-size:0.62rem;opacity:0.72">Artisan Jerky</span>
+            </div>
+          </a>
+          
+          <button class="navbar-toggler p-0 nav-icon-btn" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+            <i data-lucide="menu"></i>
+          </button>
+
+          <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav mx-auto mb-0 align-items-center gap-3 py-3 py-lg-0">
+              <li class="nav-item"><a class="nav-link px-2" data-nav="home" href="index.html">Home</a></li>
+              <li class="nav-item"><a class="nav-link px-2" data-nav="home2" href="home2.html">Home 2</a></li>
+              <li class="nav-item"><a class="nav-link px-2" data-nav="about" href="about.html">About</a></li>
+              <li class="nav-item"><a class="nav-link px-2" data-nav="shop" href="shop.html">Shop</a></li>
+              <li class="nav-item"><a class="nav-link px-2" data-nav="subscription" href="subscription.html">Subscriptions</a></li>
+              <li class="nav-item"><a class="nav-link px-2" data-nav="contact" href="contact.html">Contact</a></li>
+              <!-- Mobile-only icons inside collapse -->
+              <li class="nav-item d-lg-none py-2">
+                <div class="d-flex justify-content-center gap-3">
+                  <button type="button" class="nav-icon-btn" onclick="document.getElementById('rtlToggle').click()">
+                    <i data-lucide="arrow-right-left"></i>
+                  </button>
+                  <button type="button" class="nav-icon-btn" onclick="document.getElementById('themeToggle').click()">
+                    <i data-lucide="moon"></i>
+                  </button>
+                  <a href="login.html" class="nav-icon-btn">
+                    <i data-lucide="user"></i>
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Desktop-only icons outside collapse -->
+          <div class="d-none d-lg-flex align-items-center gap-2">
+            <button type="button" class="nav-icon-btn" id="rtlToggle" aria-label="Toggle text direction">
+              <i data-lucide="arrow-right-left"></i>
+            </button>
+            <button type="button" class="nav-icon-btn" id="themeToggle" aria-label="Toggle color theme">
+              <i data-lucide="moon" id="themeIcon"></i>
+            </button>
+            <a href="login.html" class="nav-icon-btn" aria-label="Sign in">
+              <i data-lucide="user"></i>
+            </a>
+            
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="site-main">
+      <section class="site-section pt-4 center-sm" aria-labelledby="sub-hero">
+        <div class="container container-4k">
+          <div class="row g-4 align-items-center">
+            <div class="col-lg-6 text-center reveal">
+              <p class="section-eyebrow">Subscriptions</p>
+              <h1 id="sub-hero" class="display-hero display-3">Monthly snack boxes, pitmaster curated</h1>
+              <p class="section-lead mx-auto mx-lg-0">Rotating cellar cuts, limited sauces, and tasting notes pressed on heavy card stock.</p>
+            </div>
+            <div class="col-lg-6 reveal">
+              <div class="img-ratio img-ratio-hero glass-panel p-2"><img class="lazy img-cover rounded-3" data-img="39" data-src="" alt="Subscription jerky box" /></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="site-section section-bg-glow center-sm" aria-labelledby="month-title">
+        <div class="container container-4k">
+          <div class="row g-5 align-items-center flex-lg-row-reverse">
+            <div class="col-lg-6 reveal">
+              <div class="row g-3">
+                <div class="col-6"><div class="img-ratio"><img class="lazy img-cover" data-img="40" data-src="" alt="Box contents one" /></div></div>
+                <div class="col-6"><div class="img-ratio"><img class="lazy img-cover" data-img="41" data-src="" alt="Box contents two" /></div></div>
+              </div>
+            </div>
+            <div class="col-lg-6 text-center reveal">
+              <h2 id="month-title" class="section-title">What ships each month</h2>
+              <p class="section-lead mx-auto mx-lg-0">Four full-size bags, one micro-batch wildcard, and a pairing card. Skip or swap proteins before your bill date.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="site-section-tight center-sm" aria-labelledby="tier-title">
+        <div class="container container-4k">
+          <h2 id="tier-title" class="section-title text-center reveal">Subscription tiers</h2>
+          <div class="row g-4 justify-content-center mt-2">
+            <div class="col-md-6 col-xl-4 reveal">
+              <div class="glass-panel p-4 h-100 text-center float-card d-flex flex-column">
+                <h3 class="h5">Classic</h3>
+                <p class="display-6 fw-bold my-3">$34<span class="fs-6 fw-normal text-muted">/mo</span></p>
+                <ul class="list-unstyled small text-muted flex-grow-1 mb-4"><li>4 bags</li><li>Digital tasting notes</li><li>Free shipping over $50</li></ul>
+                <a href="contact.html" class="btn btn-brand-secondary magnetic-target mt-auto btn-mobile-block">Choose Classic</a>
+              </div>
+            </div>
+            <div class="col-md-6 col-xl-4 reveal">
+              <div class="glass-panel p-4 h-100 text-center float-card border border-warning border-opacity-50 position-relative d-flex flex-column" style="box-shadow: var(--glow)">
+                <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-gradient px-3 py-2" style="background: linear-gradient(135deg, var(--burnt), var(--burnt-deep)); font-size: 0.65rem; letter-spacing: 0.15em">POPULAR PLAN</span>
+                <h3 class="h5 mt-3">Forge</h3>
+                <p class="display-6 fw-bold my-3">$52<span class="fs-6 fw-normal text-muted">/mo</span></p>
+                <ul class="list-unstyled small text-muted flex-grow-1 mb-4"><li>5 bags + sauce</li><li>Early access drops</li><li>Priority concierge</li></ul>
+                <a href="contact.html" class="btn btn-brand-primary magnetic-target mt-auto btn-mobile-block">Choose Forge</a>
+              </div>
+            </div>
+            <div class="col-md-6 col-xl-4 reveal">
+              <div class="glass-panel p-4 h-100 text-center float-card d-flex flex-column">
+                <h3 class="h5">Velvet Cellar</h3>
+                <p class="display-6 fw-bold my-3">$78<span class="fs-6 fw-normal text-muted">/mo</span></p>
+                <ul class="list-unstyled small text-muted flex-grow-1 mb-4"><li>6 bags + cellar snack</li><li>Quarterly gift</li><li>Virtual tasting invite</li></ul>
+                <a href="contact.html" class="btn btn-brand-secondary magnetic-target mt-auto btn-mobile-block">Choose Velvet</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="site-section center-sm" aria-label="Unboxing animation">
+        <div class="container container-4k">
+          <h2 class="section-title text-center reveal">Unboxing rhythm</h2>
+          <div class="row g-3 text-center reveal mt-3">
+            <div class="col-6 col-md-3"><div class="glass-panel p-3 float-card"><span class="section-eyebrow d-block mb-2">01</span><div class="img-ratio mb-2"><img class="lazy img-cover" data-img="42" data-src="" alt="Unbox step one" /></div><p class="small mb-0">Lift lid — aroma pulse</p></div></div>
+            <div class="col-6 col-md-3"><div class="glass-panel p-3 float-card"><span class="section-eyebrow d-block mb-2">02</span><div class="img-ratio mb-2"><img class="lazy img-cover" data-img="43" data-src="" alt="Unbox step two" /></div><p class="small mb-0">Read lot card</p></div></div>
+            <div class="col-6 col-md-3"><div class="glass-panel p-3 float-card"><span class="section-eyebrow d-block mb-2">03</span><div class="img-ratio mb-2"><img class="lazy img-cover" data-img="44" data-src="" alt="Unbox step three" /></div><p class="small mb-0">Chill bags 10 min</p></div></div>
+            <div class="col-6 col-md-3"><div class="glass-panel p-3 float-card"><span class="section-eyebrow d-block mb-2">04</span><div class="img-ratio mb-2"><img class="lazy img-cover" data-img="45" data-src="" alt="Unbox step four" /></div><p class="small mb-0">Slice, pour, enjoy</p></div></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="site-section pb-5 center-sm" aria-labelledby="ben-title">
+        <div class="container container-4k">
+          <div class="row g-5">
+            <div class="col-lg-6 reveal text-center">
+              <h2 id="ben-title" class="section-title">Member benefits</h2>
+              <ul class="list-unstyled d-grid gap-3 section-lead mx-auto mx-lg-0">
+                <li class="d-flex gap-3 justify-content-center"><i data-lucide="gift"></i> Birthday jerky torchon</li>
+                <li class="d-flex gap-3 justify-content-center"><i data-lucide="percent"></i> 10% off à la carte shop</li>
+                <li class="d-flex gap-3 justify-content-center"><i data-lucide="calendar-days"></i> First access to tasting room</li>
+              </ul>
+            </div>
+            <div class="col-lg-6 reveal">
+              <div class="img-ratio img-ratio-hero mb-4"><img class="lazy img-cover" data-img="46" data-src="" alt="Happy subscribers" /></div>
+              <blockquote class="glass-panel p-4 text-center"><p class="mb-2">“Forge tier is the sweet spot — sauce pairings alone justify the box.”</p><footer class="small text-muted">— K. Singh, subscriber 14 mo</footer></blockquote>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="layout-footer" role="contentinfo">
+      <footer class="site-footer">
+        <div class="container container-4k">
+          <div class="row g-4 center-sm">
+            <div class="col-lg-4 text-center">
+              <div class="d-flex align-items-center justify-content-center justify-content-lg-start gap-2 mb-3">
+                <i data-lucide="flame" class="text-burnt" style="width: 1.5rem; height: 1.5rem;"></i>
+                <div class="text-start">
+                  <div class="brand-mark">Smokehouse</div>
+                  <div class="small text-uppercase" style="letter-spacing:0.22em;font-size:0.62rem;opacity:0.72">Artisan Jerky</div>
+                </div>
+              </div>
+              <p class="section-lead mb-0">Smokehouse &amp; Artisan Jerky Brand — slow wood-fired craft, heritage cuts, and uncompromising small batches.</p>
+            </div>
+            <div class="col-6 col-lg-2">
+              <h6 class="text-uppercase small fw-bold mb-3" style="letter-spacing:0.2em;">Explore</h6>
+              <ul class="list-unstyled d-grid gap-2 small">
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="flavors.html">Flavors</a></li>
+                <li><a href="subscription.html">Subscriptions</a></li>
+              </ul>
+            </div>
+            <div class="col-6 col-lg-2">
+              <h6 class="text-uppercase small fw-bold mb-3" style="letter-spacing:0.2em;">Company</h6>
+              <ul class="list-unstyled d-grid gap-2 small">
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+              </ul>
+            </div>
+            <div class="col-lg-4">
+              <h6 class="text-uppercase small fw-bold mb-3" style="letter-spacing:0.2em;">Smokehouse Letters</h6>
+              <form class="d-flex flex-column flex-sm-row gap-2" id="footerNewsletter">
+                <input type="email" class="auth-input mb-0" placeholder="Email address" aria-label="Email" />
+                <button type="submit" class="btn-brand-primary magnetic-target text-nowrap">Subscribe</button>
+              </form>
+            </div>
+          </div>
+          <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 pt-4 mt-4 border-top border-secondary border-opacity-25 small text-muted">
+            <span>&copy; 2026 Smokehouse &amp; Artisan Jerky Brand. All rights reserved.</span>
+            <div class="d-flex gap-3">
+              <a href="login.html">Login</a>
+              <a href="register.html">Register</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/lucide@0.454.0/dist/umd/lucide.min.js"></script>
+    <script src="js/images-data.js"></script>
+    <script src="js/main.js"></script>
+  <button id="backToTop" class="back-to-top-btn magnetic-target" aria-label="Back to top"><i data-lucide="arrow-up"></i></button></body>
+</html>

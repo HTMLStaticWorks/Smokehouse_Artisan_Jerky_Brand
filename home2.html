@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Premium cinematic smokehouse experience — limited jerky, cellar cuts, and concierge subscriptions." />
+    <title>Premium Home | Smokehouse Artisan Jerky</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/main.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = { corePlugins: { preflight: false }, darkMode: "class" };
+    </script>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%23c45c26%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 class=%22lucide lucide-flame%22><path d=%22M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z%22/></svg>">
+  </head>
+  <body class="page-site page-transition" data-nav="home2" data-bs-theme="dark">
+    <div id="page-loader" aria-busy="true" aria-label="Loading">
+      <div class="text-center">
+        <div class="brand-mark mb-1">Smokehouse</div>
+        <div class="small text-uppercase mb-4" style="letter-spacing: 0.22em; opacity: 0.75">Artisan Jerky</div>
+        <div class="loader-bar mx-auto"></div>
+      </div>
+    </div>
+    <canvas id="particle-canvas" aria-hidden="true"></canvas>
+    <div class="cursor-dot" aria-hidden="true"></div>
+    <div class="cursor-ring" aria-hidden="true"></div>
+
+    <header id="layout-header" role="banner">
+      <nav class="navbar navbar-expand-lg site-navbar py-3">
+        <div class="container container-4k">
+          <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+            <i data-lucide="flame" class="text-burnt" style="width: 1.5rem; height: 1.5rem;"></i>
+            <div>
+              <span class="brand-mark d-block text-uppercase">Smokehouse</span>
+              <span class="d-block small text-uppercase" style="letter-spacing:0.22em;font-size:0.62rem;opacity:0.72">Artisan Jerky</span>
+            </div>
+          </a>
+          
+          <button class="navbar-toggler p-0 nav-icon-btn" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+            <i data-lucide="menu"></i>
+          </button>
+
+          <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav mx-auto mb-0 align-items-center gap-3 py-3 py-lg-0">
+              <li class="nav-item"><a class="nav-link px-2" data-nav="home" href="index.html">Home</a></li>
+              <li class="nav-item"><a class="nav-link px-2" data-nav="home2" href="home2.html">Home 2</a></li>
+              <li class="nav-item"><a class="nav-link px-2" data-nav="about" href="about.html">About</a></li>
+              <li class="nav-item"><a class="nav-link px-2" data-nav="shop" href="shop.html">Shop</a></li>
+              <li class="nav-item"><a class="nav-link px-2" data-nav="subscription" href="subscription.html">Subscriptions</a></li>
+              <li class="nav-item"><a class="nav-link px-2" data-nav="contact" href="contact.html">Contact</a></li>
+              <!-- Mobile-only icons inside collapse -->
+              <li class="nav-item d-lg-none py-2">
+                <div class="d-flex justify-content-center gap-3">
+                  <button type="button" class="nav-icon-btn" onclick="document.getElementById('rtlToggle').click()">
+                    <i data-lucide="arrow-right-left"></i>
+                  </button>
+                  <button type="button" class="nav-icon-btn" onclick="document.getElementById('themeToggle').click()">
+                    <i data-lucide="moon"></i>
+                  </button>
+                  <a href="login.html" class="nav-icon-btn">
+                    <i data-lucide="user"></i>
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Desktop-only icons outside collapse -->
+          <div class="d-none d-lg-flex align-items-center gap-2">
+            <button type="button" class="nav-icon-btn" id="rtlToggle" aria-label="Toggle text direction">
+              <i data-lucide="arrow-right-left"></i>
+            </button>
+            <button type="button" class="nav-icon-btn" id="themeToggle" aria-label="Toggle color theme">
+              <i data-lucide="moon" id="themeIcon"></i>
+            </button>
+            <a href="login.html" class="nav-icon-btn" aria-label="Sign in">
+              <i data-lucide="user"></i>
+            </a>
+            
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="site-main">
+      <!-- 1 Cinematic hero -->
+      <section class="position-relative overflow-hidden text-white center-sm hero-with-spotlight" aria-label="Cinematic hero" style="min-height: 100vh">
+        <div class="hero-spotlight"></div>
+        <img class="img-cover position-absolute top-0 start-0 w-100 h-100" src="imahe/New%20folder/home%202%20hero.jpeg" alt="Cinematic Smokehouse Hero" style="filter: brightness(0.55)" />
+        <div class="position-absolute top-0 start-0 w-100 h-100" style="background: radial-gradient(ellipse at center, transparent 30%, rgba(8, 6, 5, 0.92) 100%)"></div>
+        <div class="container container-4k position-relative d-flex flex-column justify-content-center align-items-center text-center" style="min-height: 100vh; padding-top: 6rem; padding-bottom: 4rem">
+          <p class="section-eyebrow reveal">Private reserve</p>
+          <h1 class="display-hero display-1 mb-4 reveal" style="max-width: 14ch">Cinematic smoke. Museum-grade chew.</h1>
+          <p class="lead text-white-50 col-lg-8 mx-auto mb-5 reveal">A second home for the jerky obsessed — black label batches, sommelier pairings, and velvet lighting on every slice photograph.</p>
+          <div class="reveal d-flex flex-column flex-sm-row gap-3 justify-content-center">
+            <a href="shop.html" class="btn btn-brand-primary btn-lg magnetic-target btn-mobile-block">Enter the cellar shop</a>
+            <a href="flavors.html" class="btn btn-brand-secondary btn-lg magnetic-target btn-mobile-block text-white border-white border-opacity-25">Explore flavor opera</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2 Premium spotlight -->
+      <section class="site-section center-sm" aria-labelledby="spot-title">
+        <div class="container container-4k">
+          <div class="row g-5 align-items-stretch">
+            <div class="col-lg-7 reveal">
+              <div class="img-ratio img-ratio-hero h-100 glass-panel p-2 tilt-3d">
+                <div class="tilt-3d-inner h-100 rounded-3 overflow-hidden">
+                  <img class="lazy img-cover h-100" data-img="11" data-src="" alt="Premium jerky spotlight" />
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-5 d-flex reveal">
+              <div class="glass-panel p-5 w-100 d-flex flex-column justify-content-center text-center">
+                <p class="section-eyebrow">Spotlight batch</p>
+                <h2 id="spot-title" class="section-title">Black label brisket jerky</h2>
+                <p class="section-lead mx-auto mx-lg-0">Sixteen-hour pecan draft, lacquered with reduced stout, sliced against the grain for silk tension.</p>
+                <div class="d-flex flex-wrap gap-4 justify-content-center mt-3">
+                  <div><span class="stat-value d-block">48</span><span class="small text-muted">hour cure</span></div>
+                  <div><span class="stat-value d-block">6</span><span class="small text-muted">wood species</span></div>
+                </div>
+                <a href="shop.html" class="btn btn-brand-primary magnetic-target mt-4 align-self-center btn-mobile-block">Add black label</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3 Interactive flavor tabs -->
+      <section class="site-section section-bg-glow center-sm" aria-labelledby="flav-title">
+        <div class="container container-4k">
+          <div class="text-center mb-5 reveal">
+            <p class="section-eyebrow">Interactive showcase</p>
+            <h2 id="flav-title" class="section-title">Choose your heat arc</h2>
+          </div>
+          <ul class="nav nav-pills justify-content-center gap-2 mb-4 reveal flex-wrap" id="flavorTabs" role="tablist">
+            <li class="nav-item"><button class="nav-link active btn-brand-primary px-4 py-2 rounded-pill" id="t1-tab" data-bs-toggle="tab" data-bs-target="#t1" type="button" role="tab">Ember</button></li>
+            <li class="nav-item"><button class="nav-link btn-brand-secondary px-4 py-2 rounded-pill" id="t2-tab" data-bs-toggle="tab" data-bs-target="#t2" type="button" role="tab">Forge</button></li>
+            <li class="nav-item"><button class="nav-link btn-brand-secondary px-4 py-2 rounded-pill" id="t3-tab" data-bs-toggle="tab" data-bs-target="#t3" type="button" role="tab">Velvet</button></li>
+          </ul>
+          <div class="tab-content reveal">
+            <div class="tab-pane fade show active" id="t1" role="tabpanel">
+              <div class="row g-4 align-items-center">
+                <div class="col-md-6"><div class="img-ratio"><img class="lazy img-cover" data-img="12" data-src="" alt="" /></div></div>
+                <div class="col-md-6 text-center text-md-start">
+                  <h3 class="h4">Ember line</h3>
+                  <p class="text-muted">Balanced smoke, white pepper lift, clean finish for daily carry.</p>
+                  <div class="heat-meter mb-2" style="max-width: 260px; margin: 0 auto"><div class="heat-meter-fill is-animated" style="--heat: 35%"></div></div>
+                  <small class="text-muted">Heat 35/100</small>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="t2" role="tabpanel">
+              <div class="row g-4 align-items-center">
+                <div class="col-md-6"><div class="img-ratio"><img class="lazy img-cover" data-img="13" data-src="" alt="" /></div></div>
+                <div class="col-md-6 text-center text-md-start">
+                  <h3 class="h4">Forge line</h3>
+                  <p class="text-muted">Capsicum build, citrus anchor, slow bloom for spice hunters.</p>
+                  <div class="heat-meter mb-2" style="max-width: 260px; margin: 0 auto"><div class="heat-meter-fill is-animated" style="--heat: 72%"></div></div>
+                  <small class="text-muted">Heat 72/100</small>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="t3" role="tabpanel">
+              <div class="row g-4 align-items-center">
+                <div class="col-md-6"><div class="img-ratio"><img class="lazy img-cover" data-img="14" data-src="" alt="" /></div></div>
+                <div class="col-md-6 text-center text-md-start">
+                  <h3 class="h4">Velvet line</h3>
+                  <p class="text-muted">Coffee, cocoa, and maple whispers — dessert smoke without cloying.</p>
+                  <div class="heat-meter mb-2" style="max-width: 260px; margin: 0 auto"><div class="heat-meter-fill is-animated" style="--heat: 22%"></div></div>
+                  <small class="text-muted">Heat 22/100</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4 Animated statistics -->
+      <section class="site-section-tight" aria-label="Statistics">
+        <div class="container container-4k">
+          <div class="row g-4 text-center center-sm reveal">
+            <div class="col-6 col-lg-3">
+              <div class="glass-panel p-4 float-card h-100">
+                <span class="stat-value" data-count="127">0</span>
+                <p class="small text-muted mb-0">Years of recipes</p>
+              </div>
+            </div>
+            <div class="col-6 col-lg-3">
+              <div class="glass-panel p-4 float-card h-100">
+                <span class="stat-value" data-count="48">0</span>
+                <p class="small text-muted mb-0">Hour max smoke</p>
+              </div>
+            </div>
+            <div class="col-6 col-lg-3">
+              <div class="glass-panel p-4 float-card h-100">
+                <span class="stat-value" data-count="12">0</span>
+                <p class="small text-muted mb-0">Core flavors</p>
+              </div>
+            </div>
+            <div class="col-6 col-lg-3">
+              <div class="glass-panel p-4 float-card h-100">
+                <span class="stat-value" data-count="98">0</span>
+                <p class="small text-muted mb-0">Cellar score</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5 Video preview -->
+      <section class="site-section center-sm" aria-labelledby="vid-title">
+        <div class="container container-4k">
+          <div class="row g-4 align-items-center flex-lg-row-reverse">
+            <div class="col-lg-6 reveal">
+              <div class="img-ratio img-ratio-hero position-relative glass-panel p-2">
+                <img class="lazy img-cover rounded-3" data-img="15" data-src="" alt="Smokehouse film preview" />
+                <button type="button" class="position-absolute top-50 start-50 translate-middle btn nav-icon-btn rounded-circle magnetic-target" style="width: 4.5rem; height: 4.5rem" aria-label="Play film preview"><i data-lucide="play"></i></button>
+              </div>
+            </div>
+            <div class="col-lg-6 text-center reveal">
+              <p class="section-eyebrow">Cellar reel</p>
+              <h2 id="vid-title" class="section-title">Watch the chambers breathe</h2>
+              <p class="section-lead mx-auto mx-lg-0">Director’s cut of our weekly smoke cycle — from intake to glossy pack-out.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6 Premium subscription -->
+      <section class="site-section section-bg-glow center-sm" aria-labelledby="prem-sub">
+        <div class="container container-4k">
+          <div class="glass-panel overflow-hidden reveal">
+            <div class="row g-0">
+              <div class="col-lg-5 min-vh-25 min-vh-lg-auto"><div class="h-100 min-vh-25" style="min-height: 280px" data-img="16"></div></div>
+              <div class="col-lg-7 p-5 p-lg-5 d-flex flex-column justify-content-center text-center">
+                <p class="section-eyebrow">Concierge subscription</p>
+                <h2 id="prem-sub" class="section-title">Velvet rope jerky club</h2>
+                <p class="section-lead mx-auto mx-lg-0">Quarterly cellar drops, numbered certificates, and sommelier zoom tastings.</p>
+                <a href="subscription.html" class="btn btn-brand-primary magnetic-target align-self-center btn-mobile-block">View tiers</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7 Elegant testimonials -->
+      <section class="site-section-tight" aria-label="Premium testimonials">
+        <div class="container container-4k">
+          <div id="home2Quotes" class="carousel slide reveal" data-bs-ride="carousel">
+            <div class="carousel-inner text-center">
+              <div class="carousel-item active">
+                <div class="glass-panel p-5 mx-auto" style="max-width: 720px">
+                  <p class="lead fst-italic mb-3">“The black label batch ruined every other snack for me — in the best way.”</p>
+                  <span class="text-muted small">J. Whitaker · Michelin sommelier</span>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="glass-panel p-5 mx-auto" style="max-width: 720px">
+                  <p class="lead fst-italic mb-3">“Texture architecture is unreal — pull, chew, dissolve in three acts.”</p>
+                  <span class="text-muted small">L. Park · Chef-owner</span>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#home2Quotes" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span></button>
+            <button class="carousel-control-next" type="button" data-bs-target="#home2Quotes" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span></button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8 Strong CTA -->
+      <section class="site-section pb-5 center-sm" aria-label="Final call to action">
+        <div class="container container-4k text-center reveal">
+          <div class="img-ratio img-ratio-hero mb-4 mx-auto glass-panel p-2" style="max-width: 900px"><img class="lazy img-cover rounded-3" data-img="17" data-src="" alt="" /></div>
+          <h2 class="section-title">Reserve this week’s smoke</h2>
+          <p class="section-lead mx-auto mb-4">Limited slots for pit-side pickup — claim yours before the bell.</p>
+          <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center">
+            <a href="contact.html" class="btn btn-brand-primary btn-lg magnetic-target btn-mobile-block">Contact concierge</a>
+            <a href="shop.html" class="btn btn-brand-secondary btn-lg magnetic-target btn-mobile-block">Browse all cuts</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="layout-footer" role="contentinfo">
+      <footer class="site-footer">
+        <div class="container container-4k">
+          <div class="row g-4 center-sm">
+            <div class="col-lg-4 text-center">
+              <div class="d-flex align-items-center justify-content-center justify-content-lg-start gap-2 mb-3">
+                <i data-lucide="flame" class="text-burnt" style="width: 1.5rem; height: 1.5rem;"></i>
+                <div class="text-start">
+                  <div class="brand-mark">Smokehouse</div>
+                  <div class="small text-uppercase" style="letter-spacing:0.22em;font-size:0.62rem;opacity:0.72">Artisan Jerky</div>
+                </div>
+              </div>
+              <p class="section-lead mb-0">Smokehouse &amp; Artisan Jerky Brand — slow wood-fired craft, heritage cuts, and uncompromising small batches.</p>
+            </div>
+            <div class="col-6 col-lg-2">
+              <h6 class="text-uppercase small fw-bold mb-3" style="letter-spacing:0.2em;">Explore</h6>
+              <ul class="list-unstyled d-grid gap-2 small">
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="flavors.html">Flavors</a></li>
+                <li><a href="subscription.html">Subscriptions</a></li>
+              </ul>
+            </div>
+            <div class="col-6 col-lg-2">
+              <h6 class="text-uppercase small fw-bold mb-3" style="letter-spacing:0.2em;">Company</h6>
+              <ul class="list-unstyled d-grid gap-2 small">
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+              </ul>
+            </div>
+            <div class="col-lg-4">
+              <h6 class="text-uppercase small fw-bold mb-3" style="letter-spacing:0.2em;">Smokehouse Letters</h6>
+              <form class="d-flex flex-column flex-sm-row gap-2" id="footerNewsletter">
+                <input type="email" class="auth-input mb-0" placeholder="Email address" aria-label="Email" />
+                <button type="submit" class="btn-brand-primary magnetic-target text-nowrap">Subscribe</button>
+              </form>
+            </div>
+          </div>
+          <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 pt-4 mt-4 border-top border-secondary border-opacity-25 small text-muted">
+            <span>&copy; 2026 Smokehouse &amp; Artisan Jerky Brand. All rights reserved.</span>
+            <div class="d-flex gap-3">
+              <a href="login.html">Login</a>
+              <a href="register.html">Register</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/lucide@0.454.0/dist/umd/lucide.min.js"></script>
+    <script src="js/images-data.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+      document.querySelectorAll("#flavorTabs .nav-link").forEach(function (btn) {
+        btn.addEventListener("shown.bs.tab", function () {
+          document.querySelectorAll("#flavorTabs .nav-link").forEach(function (b) {
+            b.classList.remove("btn-brand-primary", "active");
+            b.classList.add("btn-brand-secondary");
+          });
+          btn.classList.remove("btn-brand-secondary");
+          btn.classList.add("btn-brand-primary", "active");
+        });
+      });
+    </script>
+  <button id="backToTop" class="back-to-top-btn magnetic-target" aria-label="Back to top"><i data-lucide="arrow-up"></i></button></body>
+</html>
