@@ -345,6 +345,28 @@
         toggleRtl();
       }
     });
+  }
+
+  function initNavbarEvents() {
+    var nav = document.getElementById('mainNav');
+    if (!nav) return;
+    nav.addEventListener('show.bs.collapse', function () {
+      document.body.classList.add('nav-open');
+    });
+    nav.addEventListener('hide.bs.collapse', function () {
+      document.body.classList.remove('nav-open');
+    });
+    
+    // Close menu on link click
+    nav.querySelectorAll('.nav-link').forEach(function(link) {
+      link.addEventListener('click', function() {
+        var bsCollapse = bootstrap.Collapse.getOrCreateInstance(nav);
+        if (bsCollapse) bsCollapse.hide();
+      });
+    });
+  }
+
+  function bindNewsletter() {
     document.body.addEventListener("submit", function (e) {
       var form = e.target;
       if (!form || form.id !== "footerNewsletter") return;
@@ -422,6 +444,8 @@
     initTapFloatCards();
     initBackToTop();
     bindGlobals();
+    bindNewsletter();
+    initNavbarEvents();
     try {
       if (window.lucide && typeof lucide.createIcons === "function") {
         lucide.createIcons();
