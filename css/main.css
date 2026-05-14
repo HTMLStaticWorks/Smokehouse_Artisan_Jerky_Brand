@@ -895,6 +895,13 @@ html.light .accordion-body {
     justify-content: flex-start !important;
   }
 
+  .center-sm .justify-content-between,
+  section .justify-content-between,
+  .site-section .justify-content-between,
+  .site-section-tight .justify-content-between {
+    justify-content: space-between !important;
+  }
+
   .center-sm .section-lead,
   section .section-lead {
     margin-left: auto;
