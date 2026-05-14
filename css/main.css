@@ -876,6 +876,25 @@ html.light .accordion-body {
     justify-content: center !important;
   }
 
+  /* Specific overrides to respect intentional alignment */
+  .center-sm .text-start,
+  section .text-start,
+  .site-section .text-start,
+  .site-section-tight .text-start {
+    text-align: left !important;
+  }
+
+  .center-sm .text-start .d-flex,
+  section .text-start .d-flex,
+  .site-section .text-start .d-flex,
+  .site-section-tight .text-start .d-flex,
+  .center-sm .justify-content-start,
+  section .justify-content-start,
+  .site-section .justify-content-start,
+  .site-section-tight .justify-content-start {
+    justify-content: flex-start !important;
+  }
+
   .center-sm .section-lead,
   section .section-lead {
     margin-left: auto;
