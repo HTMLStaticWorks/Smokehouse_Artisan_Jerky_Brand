@@ -70,7 +70,7 @@
       if (window.lucide && typeof lucide.createIcons === "function") {
         lucide.createIcons();
       }
-    } catch (e) {}
+    } catch (e) { }
   }
 
   function filter(cat) {
@@ -159,7 +159,7 @@
           if (window.lucide && typeof lucide.createIcons === "function") {
             lucide.createIcons();
           }
-        } catch (e2) {}
+        } catch (e2) { }
       })
       .catch(function () {
         // Fallback for Quick View if fetch fails (file:// protocol)
@@ -221,7 +221,7 @@
           if (window.lucide && typeof lucide.createIcons === "function") {
             lucide.createIcons();
           }
-        } catch (e2) {}
+        } catch (e2) { }
       });
   }
 
@@ -230,18 +230,18 @@
     if (!grid) return;
 
     var fallbackProducts = [
-      {"id":"p1","name":"Oak Smoked Original","price":14.99,"rating":4.9,"heat":25,"img":0,"cat":"classic","desc":"Hand-cut strips, slow oak smoke, balanced salt and cracked pepper finish."},
-      {"id":"p2","name":"Black Pepper Reserve","price":15.49,"rating":4.8,"heat":30,"img":1,"cat":"classic","desc":"Coarse tellicherry pepper crust with a velvet smoke ring."},
-      {"id":"p3","name":"Hickory Sweet Heat","price":15.99,"rating":4.7,"heat":55,"img":2,"cat":"sweet","desc":"Hickory chambers, touch of molasses, warm chili backnote."},
-      {"id":"p4","name":"Mesquite BBQ Brisket","price":16.49,"rating":4.9,"heat":40,"img":3,"cat":"bbq","desc":"Brisket-cut chew, mesquite forward, caramelized bark notes."},
-      {"id":"p5","name":"Garlic Ember Crisp","price":14.49,"rating":4.6,"heat":35,"img":4,"cat":"classic","desc":"Roasted garlic layers over applewood sweetness."},
-      {"id":"p6","name":"Chili Lime Trail","price":15.29,"rating":4.8,"heat":60,"img":5,"cat":"spicy","desc":"Bright citrus lift with slow-building chili warmth."},
-      {"id":"p7","name":"Coffee Rub Porter","price":16.99,"rating":4.85,"heat":20,"img":6,"cat":"premium","desc":"Cold-brew coffee rub, porter glaze, velvet texture."},
-      {"id":"p8","name":"Smoked Maple Chipotle","price":15.79,"rating":4.75,"heat":65,"img":7,"cat":"sweet","desc":"Grade-A maple, chipotle ember, glossy lacquer."},
-      {"id":"p9","name":"Habanero Forge","price":16.29,"rating":4.7,"heat":90,"img":8,"cat":"spicy","desc":"Small-batch forge heat — for seasoned spice hunters."},
-      {"id":"p10","name":"Teriyaki Umami Cut","price":15.59,"rating":4.65,"heat":28,"img":9,"cat":"sweet","desc":"Soy-caramel glaze, ginger spark, clean slice."},
-      {"id":"p11","name":"Peppered Venison Style","price":17.49,"rating":4.9,"heat":32,"img":10,"cat":"premium","desc":"Lean profile, juniper kiss, alpine smoke profile."},
-      {"id":"p12","name":"Carolina Mustard Smoke","price":15.89,"rating":4.72,"heat":38,"img":11,"cat":"bbq","desc":"Golden mustard tang, pecan wood balance."}
+      { "id": "p1", "name": "Oak Smoked Original", "price": 14.99, "rating": 4.9, "heat": 25, "img": 0, "cat": "classic", "desc": "Hand-cut strips, slow oak smoke, balanced salt and cracked ." },
+      { "id": "p2", "name": "Black Pepper Reserve", "price": 15.49, "rating": 4.8, "heat": 30, "img": 1, "cat": "classic", "desc": "Coarse tellicherry pepper crust with a velvet smoke ring." },
+      { "id": "p3", "name": "Hickory Sweet Heat", "price": 15.99, "rating": 4.7, "heat": 55, "img": 2, "cat": "sweet", "desc": "Hickory chambers, touch of molasses, warm chili backnote." },
+      { "id": "p4", "name": "Mesquite BBQ Brisket", "price": 16.49, "rating": 4.9, "heat": 40, "img": 3, "cat": "bbq", "desc": "Brisket-cut chew, mesquite forward, caramelized bark notes." },
+      { "id": "p5", "name": "Garlic Ember Crisp", "price": 14.49, "rating": 4.6, "heat": 35, "img": 4, "cat": "classic", "desc": "Roasted garlic layers over applewood sweetness." },
+      { "id": "p6", "name": "Chili Lime Trail", "price": 15.29, "rating": 4.8, "heat": 60, "img": 5, "cat": "spicy", "desc": "Bright citrus lift with slow-building chili warmth." },
+      { "id": "p7", "name": "Coffee Rub Porter", "price": 16.99, "rating": 4.85, "heat": 20, "img": 6, "cat": "premium", "desc": "Cold-brew coffee rub, porter glaze, velvet texture." },
+      { "id": "p8", "name": "Smoked Maple Chipotle", "price": 15.79, "rating": 4.75, "heat": 65, "img": 7, "cat": "sweet", "desc": "Grade-A maple, chipotle ember, glossy lacquer." },
+      { "id": "p9", "name": "Habanero Forge", "price": 16.29, "rating": 4.7, "heat": 90, "img": 8, "cat": "spicy", "desc": "Small-batch forge heat — for seasoned spice hunters." },
+      { "id": "p10", "name": "Teriyaki Umami Cut", "price": 15.59, "rating": 4.65, "heat": 28, "img": 9, "cat": "sweet", "desc": "Soy-caramel glaze, ginger spark, clean slice." },
+      { "id": "p11", "name": "Peppered Venison Style", "price": 17.49, "rating": 4.9, "heat": 32, "img": 10, "cat": "premium", "desc": "Lean profile, juniper kiss, alpine smoke profile." },
+      { "id": "p12", "name": "Carolina Mustard Smoke", "price": 15.89, "rating": 4.72, "heat": 38, "img": 11, "cat": "bbq", "desc": "Golden mustard tang, pecan wood balance." }
     ];
 
     fetch("data/products.json")

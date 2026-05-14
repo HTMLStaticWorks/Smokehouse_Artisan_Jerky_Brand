@@ -423,6 +423,32 @@ body.nav-open .navbar-brand .brand-mark {
   border-color: rgba(196, 92, 38, 0.55);
 }
 
+.btn-highlight-featured {
+  background: linear-gradient(135deg, var(--burnt), var(--burnt-deep));
+  color: #fffaf4 !important;
+  border: none;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.85rem 1.75rem;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 0 20px rgba(196, 92, 38, 0.4);
+  animation: pulse-glow 3s infinite;
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.btn-highlight-featured:hover {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 0 35px rgba(196, 92, 38, 0.7);
+  letter-spacing: 0.1em;
+}
+
+@keyframes pulse-glow {
+  0% { box-shadow: 0 0 15px rgba(196, 92, 38, 0.3); }
+  50% { box-shadow: 0 0 30px rgba(196, 92, 38, 0.55); }
+  100% { box-shadow: 0 0 15px rgba(196, 92, 38, 0.3); }
+}
+
 /* Product cards */
 .product-card {
   border-radius: var(--radius-lg);
@@ -671,6 +697,17 @@ html[dir="rtl"] .auth-top-icons {
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
+.auth-input option {
+  background-color: var(--bg-elevated);
+  color: var(--text);
+  padding: 1rem;
+}
+
+html.light .auth-input option {
+  background-color: #fff;
+  color: #000;
+}
+
 html.light .auth-input {
   background: rgba(255, 255, 255, 0.85);
 }
@@ -712,6 +749,25 @@ html.light .auth-input {
   background: rgba(255, 255, 255, 0.1);
   border-color: rgba(196, 92, 38, 0.4);
   transform: translateY(-1px);
+}
+
+.custom-checkbox {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
+  cursor: pointer;
+  width: 1.15rem;
+  height: 1.15rem;
+  flex-shrink: 0;
+}
+
+.custom-checkbox:checked {
+  background-color: var(--burnt);
+  border-color: var(--burnt);
+}
+
+.custom-checkbox:focus {
+  box-shadow: 0 0 0 3px rgba(196, 92, 38, 0.25);
+  border-color: var(--burnt);
 }
 
 /* Map block */
