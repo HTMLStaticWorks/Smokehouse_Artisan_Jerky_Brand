@@ -17,8 +17,7 @@
   <script>
     tailwind.config = { corePlugins: { preflight: false }, darkMode: "class" };
   </script>
-  <link rel="icon"
-    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%23c45c26%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 class=%22lucide lucide-flame%22><path d=%22M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z%22/></svg>">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 </head>
 
 <body class="page-site page-transition" data-nav="home" data-bs-theme="dark">
@@ -108,7 +107,7 @@
           style="min-height: 88vh">
           <div class="row w-100 justify-content-center py-5">
             <div class="col-lg-9 col-xl-8 reveal mx-auto">
-              <p class="section-eyebrow mb-3 text-burnt" style="letter-spacing: 0.3em;">Smokehouse since 1892</p>
+              <p class="section-eyebrow mb-3 text-white" style="letter-spacing: 0.3em; opacity: 0.9;">Smokehouse since 1892</p>
               <h1 class="display-hero display-1 text-white mb-4 fw-bold">Slow fire. Bold chew.<br
                   class="d-none d-md-block"> Heritage in every strip.</h1>
 
@@ -128,8 +127,7 @@
         <div class="text-center mb-5 reveal">
           <p class="section-eyebrow">Featured cuts</p>
           <h2 id="feat-title" class="section-title">House favorites from the ember line</h2>
-          <p class="section-lead mx-auto mx-lg-0">Three signatures resting on the counter — each with its own wood
-            profile and spice arc.</p>
+
         </div>
         <div class="row g-4 justify-content-center">
           <div class="col-md-6 col-xl-4 reveal">
@@ -179,27 +177,38 @@
     <section class="site-section-tight center-sm" aria-labelledby="story-title">
       <div class="container container-4k">
         <div class="row g-5 align-items-center flex-lg-row-reverse">
-          <div class="col-lg-6 reveal">
-            <div class="img-ratio img-ratio-hero glass-panel p-2">
-              <img class="lazy img-cover rounded-3" data-img="4" data-src="" alt="Smokehouse craft storytelling" />
-            </div>
-          </div>
           <div class="col-lg-6 text-center reveal">
             <p class="section-eyebrow">Brand story</p>
             <h2 id="story-title" class="section-title">From rail-yard smoke to modern craft</h2>
             <p class="section-lead mx-auto mx-lg-0">We still break whole primals by hand, cure in small drums, and lay
               each batch onto screens beneath vented chimneys. No shortcuts — only wood, wind, and watchful eyes.</p>
-            <ul class="list-unstyled d-grid gap-2 small text-muted text-start d-inline-block">
-              <li class="d-flex align-items-start gap-2 justify-content-center">
-                <i data-lucide="flame" class="flex-shrink-0 mt-1"></i> Hardwood-only smoke cycles
-              </li>
-              <li class="d-flex align-items-start gap-2 justify-content-center">
-                <i data-lucide="award" class="flex-shrink-0 mt-1"></i> USDA inspected facility
-              </li>
-              <li class="d-flex align-items-start gap-2 justify-content-center">
-                <i data-lucide="leaf" class="flex-shrink-0 mt-1"></i> No liquid smoke — ever
-              </li>
-            </ul>
+            <div class="row g-4 mt-3 justify-content-center">
+              <div class="col-md-4">
+                <div class="d-flex flex-column align-items-center gap-2">
+                  <i data-lucide="flame" class="text-burnt" style="width: 2rem; height: 2rem;"></i>
+                  <span class="small fw-bold text-uppercase" style="letter-spacing: 0.1em">Hardwood-only smoke
+                    cycles</span>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="d-flex flex-column align-items-center gap-2">
+                  <i data-lucide="award" class="text-burnt" style="width: 2rem; height: 2rem;"></i>
+                  <span class="small fw-bold text-uppercase" style="letter-spacing: 0.1em">USDA inspected
+                    facility</span>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="d-flex flex-column align-items-center gap-2">
+                  <i data-lucide="leaf" class="text-burnt" style="width: 2rem; height: 2rem;"></i>
+                  <span class="small fw-bold text-uppercase" style="letter-spacing: 0.1em">No liquid smoke — ever</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 reveal">
+            <div class="img-ratio img-ratio-hero glass-panel p-2">
+              <img class="lazy img-cover rounded-3" data-img="4" data-src="" alt="Smokehouse craft storytelling" />
+            </div>
           </div>
         </div>
       </div>
@@ -241,33 +250,7 @@
       </div>
     </section>
 
-    <!-- 5 Testimonials -->
-    <section class="site-section-tight" aria-label="Testimonials">
-      <div class="container container-4k">
-        <div class="row g-4">
-          <div class="col-lg-4 reveal center-sm">
-            <blockquote class="glass-panel p-4 h-100 text-center">
-              <p class="mb-3">“Texture is athletic — pulls clean, finishes tender. The pepper reserve is my weekly
-                ritual.”</p>
-              <footer class="small text-muted">— M. Alvarez, Austin</footer>
-            </blockquote>
-          </div>
-          <div class="col-lg-4 reveal center-sm">
-            <blockquote class="glass-panel p-4 h-100 text-center border border-secondary border-opacity-25"
-              style="box-shadow: var(--glow)">
-              <p class="mb-3">“Worth every penny. You can taste the wood species switching between bags.”</p>
-              <footer class="small text-muted">— R. Chen, Seattle</footer>
-            </blockquote>
-          </div>
-          <div class="col-lg-4 reveal center-sm">
-            <blockquote class="glass-panel p-4 h-100 text-center">
-              <p class="mb-3">“Finally a subscription that feels curated, not random gas-station variety.”</p>
-              <footer class="small text-muted">— T. Brooks, Denver</footer>
-            </blockquote>
-          </div>
-        </div>
-      </div>
-    </section>
+
 
     <!-- 6 Subscription CTA -->
     <section class="site-section center-sm" aria-labelledby="sub-cta-title">
@@ -286,37 +269,26 @@
       </div>
     </section>
 
-    <!-- 7 FAQ preview -->
-    <section class="site-section-tight center-sm" aria-labelledby="faq-prev-title">
-      <div class="container container-4k" style="max-width: 920px">
-        <h2 id="faq-prev-title" class="section-title text-center reveal">FAQ preview</h2>
-        <div class="accordion reveal mt-4" id="homeFaq">
-          <div class="accordion-item">
-            <h3 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse"
-                data-bs-target="#hf1">How long does artisan jerky stay fresh?</button></h3>
-            <div id="hf1" class="accordion-collapse collapse show" data-bs-parent="#homeFaq">
-              <div class="accordion-body">Unopened packs remain peak for twelve months in a cool pantry. After opening,
-                enjoy within five days refrigerated.</div>
+    <!-- 7 Quality Heritage -->
+    <section class="site-section-tight center-sm" aria-labelledby="heritage-title">
+      <div class="container container-4k">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-6 reveal text-center text-lg-start">
+            <p class="section-eyebrow">Our standard</p>
+            <h2 id="heritage-title" class="section-title">Small batches. Deep particulate.</h2>
+            <p class="section-lead mx-auto mx-lg-0">Every slice passes through a 48-hour brine and a 16-hour smoke cycle. We monitor humidity and wood combustion every 90 seconds to ensure the 'Black Label' finish.</p>
+            <div class="d-flex flex-wrap gap-4 justify-content-center justify-content-lg-start mt-4">
+              <div class="d-flex align-items-center gap-2"><i data-lucide="shield-check" class="text-burnt"></i> <span class="small fw-bold">USDA Inspected</span></div>
+              <div class="d-flex align-items-center gap-2"><i data-lucide="leaf" class="text-burnt"></i> <span class="small fw-bold">100% Hardwood</span></div>
+              <div class="d-flex align-items-center gap-2"><i data-lucide="award" class="text-burnt"></i> <span class="small fw-bold">Heritage Cuts</span></div>
             </div>
           </div>
-          <div class="accordion-item">
-            <h3 class="accordion-header"><button class="accordion-button collapsed" type="button"
-                data-bs-toggle="collapse" data-bs-target="#hf2">Do you use liquid smoke?</button></h3>
-            <div id="hf2" class="accordion-collapse collapse" data-bs-parent="#homeFaq">
-              <div class="accordion-body">Never. Only hardwood particulate from live combustion in our brick-lined
-                chambers.</div>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <h3 class="accordion-header"><button class="accordion-button collapsed" type="button"
-                data-bs-toggle="collapse" data-bs-target="#hf3">Can I pause my subscription?</button></h3>
-            <div id="hf3" class="accordion-collapse collapse" data-bs-parent="#homeFaq">
-              <div class="accordion-body">Yes — skip a month anytime from your account portal before billing cuts.</div>
+          <div class="col-lg-6 reveal">
+            <div class="glass-panel p-4 float-card">
+              <div class="img-ratio img-ratio-hero"><img class="lazy img-cover rounded-3" data-img="22" data-src="" alt="Quality jerky close up" /></div>
             </div>
           </div>
         </div>
-        <div class="text-center mt-4 reveal"><a href="faq.html" class="btn btn-brand-secondary magnetic-target">View all
-            questions</a></div>
       </div>
     </section>
 
@@ -345,7 +317,7 @@
     <footer class="site-footer">
       <div class="container container-4k">
         <div class="row g-4 center-sm">
-          <div class="col-lg-4 text-center">
+          <div class="col-lg-4 text-lg-start text-center">
             <div class="d-flex align-items-center justify-content-center justify-content-lg-start gap-2 mb-3">
               <i data-lucide="flame" class="text-burnt" style="width: 1.5rem; height: 1.5rem;"></i>
               <div class="text-start">
@@ -354,8 +326,19 @@
                   Jerky</div>
               </div>
             </div>
-            <p class="section-lead mb-0">Smokehouse &amp; Artisan Jerky Brand — slow wood-fired craft, heritage cuts,
+            <p class="section-lead mb-3 text-lg-start text-center mx-0" style="max-width: 100%;">Smokehouse &amp; Artisan Jerky Brand — slow wood-fired craft, heritage cuts,
               and uncompromising small batches.</p>
+            <div class="d-flex justify-content-center justify-content-lg-start gap-3 social-icons-footer mb-4 mb-lg-0">
+              <a href="#" class="social-icon-link" aria-label="Instagram">
+                <img src="imahe/New%20folder/instagram-icon.png" alt="Instagram" class="social-icon-img">
+              </a>
+              <a href="#" class="social-icon-link" aria-label="Twitter">
+                <img src="imahe/New%20folder/twitter-icon.png" alt="Twitter" class="social-icon-img">
+              </a>
+              <a href="#" class="social-icon-link" aria-label="LinkedIn">
+                <img src="imahe/New%20folder/linkedin-icon.png" alt="LinkedIn" class="social-icon-img">
+              </a>
+            </div>
           </div>
           <div class="col-6 col-lg-2">
             <h6 class="text-uppercase small fw-bold mb-3" style="letter-spacing:0.2em;">Explore</h6>
@@ -385,22 +368,9 @@
           class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3 pt-4 mt-4 border-top border-secondary border-opacity-25 small text-muted">
           <span>&copy; 2026 Smokehouse &amp; Artisan Jerky Brand. All rights reserved.</span>
 
-          <div class="d-flex align-items-center gap-4">
-            <div class="d-flex gap-3 social-icons-footer">
-              <a href="#" class="social-icon-link" aria-label="Instagram">
-                <img src="imahe/New%20folder/instagram-icon.png" alt="Instagram" class="social-icon-img">
-              </a>
-              <a href="#" class="social-icon-link" aria-label="Twitter">
-                <img src="imahe/New%20folder/twitter-icon.png" alt="Twitter" class="social-icon-img">
-              </a>
-              <a href="#" class="social-icon-link" aria-label="LinkedIn">
-                <img src="imahe/New%20folder/linkedin-icon.png" alt="LinkedIn" class="social-icon-img">
-              </a>
-            </div>
-            <div class="d-flex gap-3">
-              <a href="login.html" class="text-decoration-none hover-text-burnt transition">Login</a>
-              <a href="register.html" class="text-decoration-none hover-text-burnt transition">Register</a>
-            </div>
+          <div class="d-flex gap-3">
+            <a href="login.html" class="text-decoration-none hover-text-burnt transition">Login</a>
+            <a href="register.html" class="text-decoration-none hover-text-burnt transition">Register</a>
           </div>
         </div>
       </div>

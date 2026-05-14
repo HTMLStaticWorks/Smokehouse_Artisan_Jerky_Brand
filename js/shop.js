@@ -46,16 +46,13 @@
       '      <p class="small text-muted mb-3">' +
       desc +
       "…</p>" +
-      '      <div class="d-flex flex-column flex-sm-row gap-2 justify-content-between align-items-stretch align-items-sm-center">' +
-      '        <span class="fw-bold">$' +
+      '      <div class="d-flex justify-content-between align-items-center mt-auto pt-3 border-top border-secondary border-opacity-10">' +
+      '        <span class="h5 mb-0 fw-bold" style="line-height: 1">$' +
       p.price.toFixed(2) +
       "</span>" +
-      '        <div class="d-flex gap-2">' +
-      '          <button type="button" class="btn btn-sm btn-brand-secondary quick-view magnetic-target" data-id="' +
+      '        <button type="button" class="btn btn-sm btn-brand-secondary quick-view magnetic-target px-3 py-2" style="line-height: 1" data-id="' +
       esc(p.id) +
       '">Quick view</button>' +
-      '          <button type="button" class="btn btn-sm btn-brand-primary add-cart magnetic-target">Add</button>' +
-      "        </div>" +
       "      </div>" +
       "    </div>" +
       "  </article>" +

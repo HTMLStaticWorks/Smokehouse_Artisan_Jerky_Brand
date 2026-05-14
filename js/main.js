@@ -410,7 +410,7 @@
       "scroll",
       function () {
         var y = window.scrollY || 0;
-        if (y > 400) {
+        if (y > 250) {
           btn.classList.add("is-visible");
         } else {
           btn.classList.remove("is-visible");
