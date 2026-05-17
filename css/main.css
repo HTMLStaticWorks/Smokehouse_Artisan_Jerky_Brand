@@ -24,6 +24,7 @@
   --glow: 0 0 60px rgba(196, 92, 38, 0.22);
   --menu-bg: #141210;
   --menu-text: #ffffff;
+  --navbar-h: 72px; /* fixed navbar height offset */
 }
 
 html.light {
@@ -50,21 +51,23 @@ html.light {
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden; /* Must be on html, NOT body — overflow on body breaks position:fixed */
 }
 
 body {
   margin: 0;
+  padding-top: var(--navbar-h);
   font-family: var(--font-body);
   background: radial-gradient(120% 80% at 50% -10%, rgba(196, 92, 38, 0.18), transparent 55%),
     linear-gradient(180deg, var(--bg-deep) 0%, #0e0c0b 100%);
   color: var(--text);
   min-height: 100vh;
-  overflow-x: hidden;
+  /* overflow-x: hidden removed from body — it breaks position:fixed in browsers */
   -webkit-font-smoothing: antialiased;
 }
 
 body.nav-open {
-  overflow: hidden !important;
+  overflow-y: hidden !important; /* only block vertical scroll, don't affect fixed positioning */
 }
 
 body.nav-open::after {
@@ -90,6 +93,7 @@ html.light body {
 
 body.page-auth {
   align-items: stretch;
+  padding-top: 0; /* auth pages don't have a site navbar offset */
 }
 
 a {
@@ -168,10 +172,13 @@ img {
 
 /* Navbar */
 .site-navbar {
-  position: sticky;
-  top: 0;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
   z-index: 2000;
-  transition: background var(--transition), box-shadow var(--transition), transform 0.35s ease;
+  transition: background var(--transition), box-shadow var(--transition);
   background: rgba(14, 12, 11, 0.95);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -597,6 +604,7 @@ main.site-main {
   position: relative;
   z-index: 1;
 }
+
 
 /* Hero spotlight */
 .hero-spotlight {
@@ -1048,11 +1056,12 @@ html.light .accordion-body {
 @keyframes pageIn {
   from {
     opacity: 0;
-    filter: blur(8px);
+    /* filter: blur removed — filter on body breaks position:fixed (CSS spec: filter creates new containing block) */
+    transform: translateY(6px);
   }
   to {
     opacity: 1;
-    filter: blur(0);
+    transform: translateY(0);
   }
 }
 

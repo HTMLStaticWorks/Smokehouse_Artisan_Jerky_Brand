@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -6,21 +6,26 @@
     <meta name="description" content="Jerky subscription boxes — tiers, benefits, and member perks." />
     <title>Subscription Boxes | Smokehouse Artisan Jerky</title>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="js/navbar-fix.js"></script><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/main.css" rel="stylesheet" />
+    <style>
+      .site-navbar { position: fixed !important; top: 0 !important; left: 0 !important; right: 0 !important; width: 100% !important; z-index: 9999 !important; }
+      body { padding-top: 72px !important; }
+    </style>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = { corePlugins: { preflight: false }, darkMode: "class" };
     </script>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%23c45c26%22 stroke-width=%222%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22 class=%22lucide lucide-flame%22><path d=%22M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z%22/></svg>">
-  </head>
-  <body class="page-site page-transition" data-nav="subscription" data-bs-theme="dark">
+  <script>!function(){function f(){var n=document.querySelector(".site-navbar");if(!n)return;n.style.cssText="position:fixed!important;top:0!important;left:0!important;right:0!important;width:100%!important;z-index:9999!important;";document.body.style.removeProperty("filter");document.documentElement.style.removeProperty("filter");}document.addEventListener("DOMContentLoaded",f);window.addEventListener("scroll",f,{passive:true});setInterval(f,200);}();</script>
+</head>
+  <body class="page-site" data-nav="subscription" data-bs-theme="dark">
     <div id="page-loader" aria-busy="true"><div class="text-center"><div class="brand-mark mb-1">Smokehouse</div><div class="small text-uppercase mb-4" style="letter-spacing:0.22em;opacity:0.75">Artisan Jerky</div><div class="loader-bar mx-auto"></div></div></div>
     <canvas id="particle-canvas" aria-hidden="true"></canvas>
     <div class="cursor-dot" aria-hidden="true"></div>
     <div class="cursor-ring" aria-hidden="true"></div>
     <header id="layout-header" role="banner">
-      <nav class="navbar navbar-expand-lg site-navbar py-3">
+      <nav class="navbar navbar-expand-lg site-navbar fixed-top py-3" style="position:fixed!important;top:0!important;left:0!important;right:0!important;width:100%!important;z-index:9999!important;background:rgba(14,12,11,0.97)!important;backdrop-filter:blur(16px)!important;">
         <div class="container container-4k">
           <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
             <i data-lucide="flame" class="text-burnt" style="width: 1.5rem; height: 1.5rem;"></i>

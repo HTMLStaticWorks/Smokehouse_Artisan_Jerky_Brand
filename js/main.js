@@ -84,11 +84,27 @@
   function initNavbarScroll() {
     var nav = document.querySelector(".site-navbar");
     if (!nav) return;
+
+    // JS enforcement: force fixed positioning regardless of any CSS framework override
+    function enforceNavbarFixed() {
+      nav.style.setProperty("position", "fixed", "important");
+      nav.style.setProperty("top", "0", "important");
+      nav.style.setProperty("left", "0", "important");
+      nav.style.setProperty("right", "0", "important");
+      nav.style.setProperty("width", "100%", "important");
+      nav.style.setProperty("z-index", "9999", "important");
+    }
+
+    // Apply immediately on load
+    enforceNavbarFixed();
+
+    // Re-apply on every scroll in case something resets it
     window.addEventListener(
       "scroll",
       function () {
         var y = window.scrollY || 0;
         nav.classList.toggle("navbar-scrolled", y > 24);
+        enforceNavbarFixed();
       },
       { passive: true }
     );
